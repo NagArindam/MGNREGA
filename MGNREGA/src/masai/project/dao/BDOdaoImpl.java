@@ -163,8 +163,17 @@ public class BDOdaoImpl implements BDOdao{
 
 	@Override
 	public String allocateProjectToGPM(int pid, int GPMID) throws ProjectException, GPMexception, BDOexception {
-		// TODO Auto-generated method stub
-		return null;
+		String msg = "Project is not allocated!";
+		
+		try (Connection conn = DBUtil.provideConnection()){
+			
+			PreparedStatement ps = conn.prepareStatement("");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
+		return msg;
 	}
 
 	@Override
