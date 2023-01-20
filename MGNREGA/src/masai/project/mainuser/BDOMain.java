@@ -1,6 +1,12 @@
 package masai.project.mainuser;
 
+import masai.project.usecase.AllocateProjectToGPMUsecase;
 import masai.project.usecase.BDOLoginUsecase;
+import masai.project.usecase.CreateNewGPMUsecase;
+import masai.project.usecase.CreateProjectUsecase;
+import masai.project.usecase.EmployeeWorkingOnProjectUsecase;
+import masai.project.usecase.ViewAllGPMUsecase;
+import masai.project.usecase.ViewListOfProjectsUsecase;
 
 public class BDOMain {
 	
@@ -23,6 +29,35 @@ public class BDOMain {
 		System.out.println("Logout => Press 7.");
 	}
 	
+	public static void CreateProject() {
+		CreateProjectUsecase CreateProject = new CreateProjectUsecase();
+		CreateProject.createProject();
+	}
+	
+	public static void ViewListOfProject() {
+		ViewListOfProjectsUsecase allprojects = new ViewListOfProjectsUsecase();
+		allprojects.viewlistofprojects();
+	}
+	
+	public static void createNewGPM() {
+		CreateNewGPMUsecase newGPM = new CreateNewGPMUsecase();
+		newGPM.createNewGpm();
+	}
+	
+	public static void ViewListOfALLGPM() {
+		ViewAllGPMUsecase allGPM = new ViewAllGPMUsecase();
+		allGPM.viewallGpm();
+	}
+	
+	public static void allocateProjectToGPM() {
+		AllocateProjectToGPMUsecase allcProjGPM = new AllocateProjectToGPMUsecase();
+		allcProjGPM.allocateprojecttogpm();
+	}
+	
+	public static void seeListOfEmpWorkingAndWages() {
+		EmployeeWorkingOnProjectUsecase empWages = new EmployeeWorkingOnProjectUsecase();
+		empWages.employeeWorkingOnProject();
+	}
 	
 
 }
