@@ -7,6 +7,7 @@ import masai.project.exception.EmployeeException;
 import masai.project.exception.GPMexception;
 import masai.project.exception.ProjectException;
 import masai.project.models.Employee;
+import masai.project.models.EmployeeWageDTO;
 
 public interface GPMdao {
 	
@@ -18,6 +19,6 @@ public interface GPMdao {
 	
 	public String assignEmployeeToAProject(int eid, int pid)throws EmployeeException,GPMexception, ProjectException;
 	
-	
+	public List<EmployeeWageDTO> daysAndWagesOfEmployee() throws EmployeeException;
 
 }
