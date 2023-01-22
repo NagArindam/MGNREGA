@@ -21,7 +21,7 @@ Functions of BDO:
 
 Function of Gram Panchayet member:
 1. Login into their Account.
-  Maximum Attempt is 3. After that the app is closed and BDO has to again Login.
+  Maximum Attempt is 3. After that the app is closed and GPM has to again Login.
 2. Create Employee.
 3. View the Details of Employee.
 4. Assign Employee to a Project.
