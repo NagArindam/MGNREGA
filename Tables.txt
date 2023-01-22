@@ -1,0 +1,67 @@
+create table GPM(
+    -> GPMID int primary key auto_increment,
+    -> GPMname varchar(15) not null,
+    -> GPMaddress varchar(25) not null,
+    -> GPMphoneno varchar(10) not null unique,
+    -> GPMpassword varchar(15) not null
+    -> );
+
+desc GPM;
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| GPMID       | int         | NO   | PRI | NULL    | auto_increment |
+| GPMname     | varchar(15) | NO   |     | NULL    |                |
+| GPMaddress  | varchar(25) | NO   |     | NULL    |                |
+| GPMphoneno  | varchar(10) | NO   | UNI | NULL    |                |
+| GPMpassword | varchar(15) | NO   |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+
+
+
+create table project(
+    -> pid int primary key auto_increment,
+    -> GPMpid int,
+    -> pname varchar(25) not null,
+    -> pcost int,
+    -> ptiming int not null,
+    -> foreign key(GPMpid) references GPM(GPMID)
+    -> );
+
+ desc project;
++---------+-------------+------+-----+---------+----------------+
+| Field   | Type        | Null | Key | Default | Extra          |
++---------+-------------+------+-----+---------+----------------+
+| pid     | int         | NO   | PRI | NULL    | auto_increment |
+| GPMpid  | int         | YES  | MUL | NULL    |                |
+| pname   | varchar(25) | NO   |     | NULL    |                |
+| pcost   | int         | YES  |     | NULL    |                |
+| ptiming | int         | NO   |     | NULL    |                |
++---------+-------------+------+-----+---------+----------------+
+
+
+
+create table Employee(
+    -> eid int primary key auto_increment,
+    -> GPMeid int,
+    -> peid int,
+    -> ename varchar(20) not null,
+    -> eaddress varchar(25) not null,
+    -> ejoiningdate date not null,
+    -> ewage int not null,
+    -> foreign key(GPMeid) references GPM(GPMID),
+    -> foreign key(peid) references project(pid)
+    -> );
+
+desc Employee;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| eid          | int         | NO   | PRI | NULL    | auto_increment |
+| GPMeid       | int         | YES  | MUL | NULL    |                |
+| peid         | int         | YES  | MUL | NULL    |                |
+| ename        | varchar(20) | NO   |     | NULL    |                |
+| eaddress     | varchar(25) | NO   |     | NULL    |                |
+| ejoiningdate | date        | NO   |     | NULL    |                |
+| ewage        | int         | NO   |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
