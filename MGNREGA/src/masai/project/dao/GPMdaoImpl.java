@@ -32,7 +32,7 @@ public class GPMdaoImpl implements GPMdao{
 			
 			while(rs.next()) {
 				
-				String phoneno = rs.getString("GPMphone");
+				String phoneno = rs.getString("GPMphoneno");
 				String password = rs.getString("GPMpassword");
 				
 				if(phoneno.equals(GPMphoneno) && password.equals(GPMpassword)) {
@@ -56,7 +56,7 @@ public class GPMdaoImpl implements GPMdao{
 		
 		try (Connection conn = DBUtil.provideConnection()){
 			
-			PreparedStatement ps = conn.prepareStatement("insert into Employee (GPMeid, peid, ename, eaddress, ejoiningdate, ewage) values(?,?,?,?,curdate(),?)");
+			PreparedStatement ps = conn.prepareStatement("insert into Employee (GPMeid, ename, eaddress, ejoiningdate, ewage) values(?,?,?,curdate(),?)");
 			
 			ps.setInt(1, emp.getGPMeid());
 			ps.setString(2, emp.getEname());

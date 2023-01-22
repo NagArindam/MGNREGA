@@ -35,8 +35,9 @@ public class CreateProjectUsecase {
 			
 			try {
 				res = dao.createAProject(project);
+				System.out.println(res);
 			} catch (ProjectException e) {
-				res = e.getMessage();
+				System.out.println(e.getMessage());
 			}
 		} catch (InputMismatchException e) {
 			System.out.println("Wrong Input Data!");
