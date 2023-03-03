@@ -20,6 +20,9 @@ public class GPMdaoImpl implements GPMdao{
 	
 	public static int GPMIDstore;
 
+	
+//	=============================== Login for GPM =======================================
+	
 	@Override
 	public String GPMLogin(String GPMphoneno, String GPMpassword) throws GPMexception, CredException {
 		String msg = "Incorrect phone or password!";
@@ -50,6 +53,9 @@ public class GPMdaoImpl implements GPMdao{
 		
 	}
 
+	
+//	=============================== Create Employee =======================================
+	
 	@Override
 	public String createEmployee(Employee emp) throws EmployeeException {
 		String msg = "Employee is not created";
@@ -78,6 +84,9 @@ public class GPMdaoImpl implements GPMdao{
 		return msg;
 	}
 
+	
+//	=============================== View all the employees with details =======================================
+	
 	@Override
 	public List<Employee> viewdetailsOfEmployee() throws EmployeeException {
 		
@@ -116,6 +125,9 @@ public class GPMdaoImpl implements GPMdao{
 		return listofemp;
 	}
 
+	
+//	=============================== Assign Employee to a Project =======================================
+	
 	@Override
 	public String assignEmployeeToAProject(int eid, int pid) throws EmployeeException, GPMexception, ProjectException {
 		String msg = "Employee is not assigned to a Project.";
@@ -167,6 +179,9 @@ public class GPMdaoImpl implements GPMdao{
 		return msg;
 	}
 
+	
+//	=============================== View list of Employee with their worked day and wages =======================================
+	
 	@Override
 	public List<EmployeeWageDTO> daysAndWagesOfEmployee() throws EmployeeException {
 		

@@ -19,7 +19,10 @@ import masai.project.models.Project;
 import masai.project.utility.DBUtil;
 
 public class BDOdaoImpl implements BDOdao{
+	
 
+//	=============================== Login for BDO =======================================
+	
 	@Override
 	public String BDOLogin(String username, String password) throws CredException {
 		
@@ -35,6 +38,9 @@ public class BDOdaoImpl implements BDOdao{
 		return msg;
 	}
 
+	
+//	=============================== Create a Project =======================================
+	
 	@Override
 	public String createAProject(Project proj) throws ProjectException {
 		
@@ -63,6 +69,9 @@ public class BDOdaoImpl implements BDOdao{
 		return msg;
 	}
 
+	
+//	=============================== View the list of all Projects =======================================
+	
 	@Override
 	public List<Project> viewListOfProject() throws ProjectException {
 		
@@ -98,6 +107,9 @@ public class BDOdaoImpl implements BDOdao{
 		return listofproject;
 	}
 
+	
+//	=============================== Create New GPM =======================================
+	
 	@Override
 	public String createNewGPM(GPM gpm) throws GPMexception {
 		String msg = "GPM Not Created Successfully!";
@@ -127,6 +139,9 @@ public class BDOdaoImpl implements BDOdao{
 		return msg;
 	}
 
+	
+//	=============================== View list of all GPMs =======================================
+	
 	@Override
 	public List<GPM> viewAllGPM() throws GPMexception {
 		
@@ -162,6 +177,9 @@ public class BDOdaoImpl implements BDOdao{
 		return listOfGPM;
 	}
 
+	
+//	=============================== Allocate Project to GPM =======================================
+	
 	@Override
 	public String allocateProjectToGPM(int pid, int GPMID) throws ProjectException, GPMexception, BDOexception {
 		String msg = "Project is not allocated!";
@@ -212,6 +230,9 @@ public class BDOdaoImpl implements BDOdao{
 		return msg;
 	}
 
+	
+//	=============================== View list of all employees and their assigned Project =======================================
+	
 	@Override
 	public List<Employee> listOfEmployeeOnProject(int pid) throws ProjectException, EmployeeException, BDOexception {
 		
